@@ -7,6 +7,7 @@ import Process from '../components/Process';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
+import Chatbot from '../components/Chatbot';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <Testimonials />
       <CallToAction />
       <Footer />
+      <Chatbot />
     </div>
   );
 };
