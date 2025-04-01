@@ -128,7 +128,7 @@ const Chatbot = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <button 
           onClick={toggleChat}
-          className="bg-intell-blue hover:bg-intell-darkBlue text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center justify-center"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full p-4 shadow-lg shadow-primary/20 transition-all duration-300 flex items-center justify-center"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -138,12 +138,12 @@ const Chatbot = () => {
       {/* Chat Window */}
       {isOpen && (
         <div 
-          className={`fixed z-50 bottom-20 right-6 bg-white rounded-lg shadow-xl overflow-hidden flex flex-col transition-all duration-300 w-80 sm:w-96 ${
+          className={`fixed z-50 bottom-20 right-6 bg-card text-card-foreground glass-morphism rounded-lg shadow-xl overflow-hidden flex flex-col transition-all duration-300 w-80 sm:w-96 ${
             isMinimized ? 'h-14' : 'h-96'
           }`}
         >
           {/* Chat Header */}
-          <div className="bg-intell-blue p-3 text-white flex justify-between items-center">
+          <div className="bg-primary p-3 text-primary-foreground flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <MessageCircle size={18} />
               <h3 className="font-medium">IntellSurge Assistant</h3>
@@ -151,14 +151,14 @@ const Chatbot = () => {
             <div className="flex space-x-1">
               <button 
                 onClick={toggleChat} 
-                className="hover:bg-intell-darkBlue rounded p-1 transition"
+                className="hover:bg-primary-foreground/10 rounded p-1 transition"
                 aria-label="Minimize chat"
               >
                 <MinusSquare size={16} />
               </button>
               <button 
                 onClick={closeChat} 
-                className="hover:bg-intell-darkBlue rounded p-1 transition"
+                className="hover:bg-primary-foreground/10 rounded p-1 transition"
                 aria-label="Close chat"
               >
                 <X size={16} />
@@ -169,17 +169,18 @@ const Chatbot = () => {
           {!isMinimized && (
             <>
               {/* Messages Area */}
-              <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50">
+              <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-card/50">
                 {messages.map((msg, index) => (
                   <div 
                     key={index} 
-                    className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'}`}
+                    className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'} chat-fadeInUp`}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div 
                       className={`max-w-[80%] p-3 rounded-lg ${
                         msg.isBot 
-                          ? 'bg-gray-200 text-gray-800' 
-                          : 'bg-intell-blue text-white'
+                          ? 'bg-muted text-muted-foreground' 
+                          : 'bg-primary text-primary-foreground'
                       }`}
                     >
                       <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
@@ -190,12 +191,12 @@ const Chatbot = () => {
                   </div>
                 ))}
                 {isTyping && (
-                  <div className="flex justify-start">
-                    <div className="bg-gray-200 rounded-lg p-3 max-w-[80%]">
+                  <div className="flex justify-start chat-fadeInUp">
+                    <div className="bg-muted rounded-lg p-3 max-w-[80%]">
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 rounded-full bg-gray-500 animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                        <div className="w-2 h-2 rounded-full bg-gray-500 animate-bounce" style={{ animationDelay: '250ms' }}></div>
-                        <div className="w-2 h-2 rounded-full bg-gray-500 animate-bounce" style={{ animationDelay: '500ms' }}></div>
+                        <div className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '250ms' }}></div>
+                        <div className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '500ms' }}></div>
                       </div>
                     </div>
                   </div>
@@ -204,14 +205,14 @@ const Chatbot = () => {
               </div>
 
               {/* Input Area */}
-              <div className="border-t p-3">
+              <div className="border-t border-border p-3">
                 <div className="flex space-x-2">
                   <Textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Type your message..."
-                    className="resize-none min-h-10 max-h-24"
+                    className="resize-none min-h-10 max-h-24 bg-card/50"
                     rows={1}
                   />
                   <Button 
