@@ -1,46 +1,71 @@
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useEffect } from 'react';
 
 const Hero = () => {
+  useEffect(() => {
+    // Trigger animations after component mount
+    const animateElements = () => {
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        el.classList.add('animate-text-reveal');
+      });
+      document.querySelectorAll('.animate-glow-element').forEach(el => {
+        el.classList.add('glow-effect');
+      });
+    };
+    
+    // Small delay to ensure DOM is ready
+    setTimeout(animateElements, 100);
+  }, []);
+
   return (
-    <div className="relative bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28">
-            <div className="text-center lg:text-left">
-              <h1 className="heading-xl">
-                <span className="block text-gray-900">Transform Your Ideas into</span>
-                <span className="block text-intell-blue">Intelligent Solutions</span>
-              </h1>
-              <p className="mt-3 paragraph max-w-md mx-auto lg:mx-0 md:mt-5">
-                Accelerate your business with cutting-edge technology. We build custom software, automate workflows, and create innovative solutions that grow with your business.
-              </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a href="#contact" className="btn-primary flex items-center justify-center">
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a href="#process" className="btn-secondary flex items-center justify-center">
-                    Learn More
-                  </a>
-                </div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Background glow effect */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-intell-green animate-glow opacity-20"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-10">
+          <div className="flex items-center justify-center mb-6">
+            <div className="flex items-center space-x-2">
+              <div className="w-6 h-6 rounded-full bg-intell-green"></div>
+              <div className="flex">
+                <span className="text-gray-200 text-sm">⭐⭐⭐⭐⭐</span>
               </div>
             </div>
-          </main>
+            <div className="ml-3 text-gray-300">300+ intelligent solutions delivered</div>
+          </div>
+          
+          <h1 className="heading-lg mb-6">
+            <span className="block animate-on-scroll opacity-0">Launch your</span>
+            <span className="block text-gradient-primary animate-on-scroll opacity-0 animate-delay-200">intelligent solution</span>
+            <span className="block animate-on-scroll opacity-0 animate-delay-300">with confidence</span>
+          </h1>
+          
+          <p className="paragraph max-w-3xl mx-auto animate-on-scroll opacity-0 animate-delay-400">
+            We provide high-quality technology development services for businesses.
+            Validate your idea with a custom intelligent solution—fast, scalable, and investor-ready.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+            <a href="#contact" className="btn-primary animate-on-scroll opacity-0 animate-delay-500">
+              Get Started
+            </a>
+            <a href="#process" className="btn-secondary animate-on-scroll opacity-0 animate-delay-500">
+              Learn More
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <div className="h-56 w-full bg-intell-blue/10 sm:h-72 md:h-96 lg:h-full lg:w-full">
-          <div className="flex h-full items-center justify-center">
-            <div className="relative h-64 w-64 md:h-80 md:w-80 animate-fade-in">
-              <div className="absolute h-full w-full rounded-full bg-intell-blue/20"></div>
-              <div className="absolute top-8 left-8 h-3/4 w-3/4 rounded-full bg-intell-blue/30"></div>
-              <div className="absolute top-16 left-16 h-1/2 w-1/2 rounded-full bg-intell-blue/40"></div>
-            </div>
+        
+        {/* Client logos */}
+        <div className="mt-20 pt-10 border-t border-gray-800">
+          <p className="text-center text-gray-400 mb-8">
+            See where our clients have gone after developing their solutions with us:
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+            <div className="w-24 h-8 bg-white/10 rounded-md"></div>
+            <div className="w-24 h-8 bg-white/10 rounded-md"></div>
+            <div className="w-24 h-8 bg-white/10 rounded-md"></div>
+            <div className="w-24 h-8 bg-white/10 rounded-md"></div>
+            <div className="w-24 h-8 bg-white/10 rounded-md"></div>
           </div>
         </div>
       </div>

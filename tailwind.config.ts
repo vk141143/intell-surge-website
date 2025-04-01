@@ -59,6 +59,9 @@ export default {
 					lightBlue: '#e6f7ff',
 					gray: '#f5f5f5',
 					darkGray: '#333333',
+					green: '#10b981',
+					lightGreen: '#34d399',
+					darkGreen: '#059669',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -130,6 +133,20 @@ export default {
 						transform: 'scale(1)', 
 						opacity: '1' 
 					},
+				},
+				'glow': {
+					'0%': { 
+						opacity: '0.4',
+						filter: 'brightness(1) blur(20px)'
+					},
+					'50%': { 
+						opacity: '1',
+						filter: 'brightness(1.2) blur(25px)'
+					},
+					'100%': { 
+						opacity: '0.4',
+						filter: 'brightness(1) blur(20px)'
+					}
 				}
 			},
 			animation: {
@@ -141,6 +158,7 @@ export default {
 				'slide-out-right': 'slide-out-right 0.3s ease-out',
 				'text-reveal': 'text-reveal 0.8s ease-out forwards',
 				'image-reveal': 'image-reveal 1s ease-out forwards',
+				'glow': 'glow 6s ease-in-out infinite'
 			}
 		}
 	},

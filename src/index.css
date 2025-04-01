@@ -5,31 +5,32 @@
 
 @layer base {
   :root {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
     --primary: 142.1 70.6% 45.3%;
     --primary-foreground: 144.9 80.4% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
+    --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 12 6.5% 15.1%;
+    --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 142.4 71.8% 29.2%;
+    --radius: 0.5rem;
     
-    --sidebar-background: 20 14.3% 4.1%;
-    --sidebar-foreground: 0 0% 95%;
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 142.1 70.6% 45.3%;
     --sidebar-primary-foreground: 144.9 80.4% 10%;
-    --sidebar-accent: 12 6.5% 15.1%;
+    --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 142.4 71.8% 29.2%;
@@ -41,7 +42,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  html {
+    @apply scroll-smooth;
   }
 
   .section-padding {
@@ -49,11 +55,11 @@
   }
 
   .heading-lg {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    @apply text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white;
   }
 
   .heading-md {
-    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+    @apply text-2xl font-bold tracking-tight sm:text-3xl text-white;
   }
 
   .paragraph {
@@ -61,15 +67,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-primary hover:bg-primary/90 transition duration-200;
+    @apply inline-flex items-center justify-center px-5 py-3 text-base font-medium rounded-md text-black bg-intell-green hover:bg-intell-lightGreen transition duration-200;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-5 py-3 border border-gray-600 text-base font-medium rounded-md text-white bg-transparent hover:bg-accent transition duration-200;
+    @apply inline-flex items-center justify-center px-5 py-3 border border-gray-600 text-base font-medium rounded-md text-white bg-transparent hover:border-intell-green hover:text-intell-green transition duration-200;
   }
 
   .card-shadow {
-    @apply shadow-md hover:shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-shadow duration-200;
+    @apply shadow-md hover:shadow-lg shadow-intell-green/10 hover:shadow-intell-green/20 transition-shadow duration-200;
   }
 }
 
@@ -131,5 +137,17 @@
 }
 
 .text-gradient-primary {
-  @apply bg-gradient-to-br from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-intell-green via-intell-lightGreen to-intell-green/60 bg-clip-text text-transparent;
+}
+
+/* New glow effect for the accent colors */
+.glow-effect {
+  @apply relative;
+}
+
+.glow-effect::after {
+  content: '';
+  @apply absolute -z-10 w-full h-full rounded-full bg-intell-green animate-glow;
+  filter: blur(30px);
+  opacity: 0.5;
 }
