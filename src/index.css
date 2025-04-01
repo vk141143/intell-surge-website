@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -97,5 +98,40 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .heading-xl {
+    @apply text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl;
+  }
+  
+  .heading-lg {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+  }
+  
+  .heading-md {
+    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+  }
+  
+  .paragraph {
+    @apply text-lg leading-relaxed text-gray-600;
+  }
+
+  .btn-primary {
+    @apply bg-intell-blue hover:bg-intell-darkBlue text-white font-medium py-3 px-6 rounded-md transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-intell-blue border border-intell-blue hover:bg-intell-lightBlue font-medium py-3 px-6 rounded-md transition-all duration-200;
+  }
+
+  .card-shadow {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
   }
 }
