@@ -44,12 +44,6 @@ const Navbar = () => {
             <a href="#about" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
               About Us
             </a>
-            <a href="#case-studies" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
-              Case Studies
-            </a>
-            <a href="#faqs" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
-              FAQs
-            </a>
             <a href="#team" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
               Our Team
             </a>
@@ -79,12 +73,6 @@ const Navbar = () => {
             </a>
             <a href="#about" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
               About Us
-            </a>
-            <a href="#case-studies" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
-              Case Studies
-            </a>
-            <a href="#faqs" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
-              FAQs
             </a>
             <a href="#team" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
               Our Team
