@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2cc58a3 (Initial commit)
 import React, { useEffect, useRef } from 'react';
 import { MessageSquare, FileSearch, Code, BarChart4 } from 'lucide-react';
 
@@ -60,12 +63,17 @@ const Process = () => {
 
     return () => {
       if (sectionRef.current) {
+<<<<<<< HEAD
+=======
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+>>>>>>> 2cc58a3 (Initial commit)
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
   return (
+<<<<<<< HEAD
     <section id="process" className="section-padding" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -73,6 +81,15 @@ const Process = () => {
             Our simple 4-step process<br />to build your <span className="text-gradient-primary">solution</span>
           </h2>
           <p className="paragraph mt-4 max-w-3xl mx-auto process-title opacity-0">
+=======
+    <section id="process" className="section-padding bg-white" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="heading-lg process-title opacity-0 mb-4 text-black">
+            Our simple 4-step process<br />to build your <span className="text-gradient-primary">solution</span>
+          </h2>
+          <p className="paragraph mt-4 max-w-3xl mx-auto process-title opacity-0 text-gray-700">
+>>>>>>> 2cc58a3 (Initial commit)
             We follow a structured yet flexible process to ensure your solution's
             success, adapting to your unique needs and goals along the way.
           </p>
@@ -80,15 +97,24 @@ const Process = () => {
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
+<<<<<<< HEAD
             <div key={step.id} className="process-step opacity-0 glass-morphism p-8 rounded-xl">
+=======
+            <div key={step.id} className="process-step opacity-0 glass-morphism p-8 rounded-xl bg-gray-100">
+>>>>>>> 2cc58a3 (Initial commit)
               <div className="relative mb-6">
                 <div className="w-16 h-16 flex items-center justify-center rounded-full bg-intell-green/10 border border-intell-green/20">
                   <step.icon className="h-8 w-8 text-intell-green" />
                 </div>
               </div>
               
+<<<<<<< HEAD
               <h3 className="mb-2 text-2xl font-bold text-white">{step.name}</h3>
               <p className="text-gray-400">{step.description}</p>
+=======
+              <h3 className="mb-2 text-2xl font-bold text-black">{step.name}</h3>
+              <p className="text-gray-700">{step.description}</p>
+>>>>>>> 2cc58a3 (Initial commit)
             </div>
           ))}
         </div>
@@ -97,4 +123,8 @@ const Process = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Process;
+=======
+export default Process;
+>>>>>>> 2cc58a3 (Initial commit)

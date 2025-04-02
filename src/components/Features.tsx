@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2cc58a3 (Initial commit)
 import React, { useEffect, useRef } from 'react';
 import { Code, Cpu, BarChart, Lock, Zap, Layers } from 'lucide-react';
 
@@ -43,12 +46,18 @@ const Features = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+<<<<<<< HEAD
             // Add animation classes when section is visible
             document.querySelectorAll('.features-title').forEach(el => {
               el.classList.add('animate-text-reveal');
             });
             
             // Animate feature cards with delay
+=======
+            document.querySelectorAll('.features-title').forEach(el => {
+              el.classList.add('animate-text-reveal');
+            });
+>>>>>>> 2cc58a3 (Initial commit)
             document.querySelectorAll('.feature-card').forEach((el, index) => {
               setTimeout(() => {
                 el.classList.add('animate-fade-in');
@@ -66,12 +75,17 @@ const Features = () => {
 
     return () => {
       if (sectionRef.current) {
+<<<<<<< HEAD
+=======
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+>>>>>>> 2cc58a3 (Initial commit)
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
   return (
+<<<<<<< HEAD
     <section id="features" className="section-padding" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -79,6 +93,15 @@ const Features = () => {
             Comprehensive Tech Solutions
           </h2>
           <p className="paragraph mt-4 max-w-3xl mx-auto features-title opacity-0">
+=======
+    <section id="features" className="section-padding bg-white" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="heading-lg features-title opacity-0 text-[#dc3545]">
+            Comprehensive Tech Solutions
+          </h2>
+          <p className="paragraph mt-4 max-w-3xl mx-auto features-title opacity-0 text-[#0D3B66]">
+>>>>>>> 2cc58a3 (Initial commit)
             We offer a full spectrum of services to help organizations transform their technology infrastructure and drive business growth.
           </p>
         </div>
@@ -87,6 +110,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={feature.name} 
+<<<<<<< HEAD
               className="feature-card opacity-0 glass-morphism rounded-xl p-8 transition-all duration-300 hover:border-intell-green/50 hover:-translate-y-1"
             >
               <div className="inline-flex items-center justify-center p-3 rounded-md bg-intell-green/10 border border-intell-green/20">
@@ -94,6 +118,15 @@ const Features = () => {
               </div>
               <h3 className="mt-5 text-xl font-medium text-white">{feature.name}</h3>
               <p className="mt-2 text-gray-400">{feature.description}</p>
+=======
+              className="feature-card opacity-0 bg-[#11B5E4] p-8 rounded-xl shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              <div className="inline-flex items-center justify-center p-3 rounded-md bg-[#dc3545]/10 border border-[#dc3545]/20">
+                <feature.icon className="h-6 w-6 text-[#dc3545]" />
+              </div>
+              <h3 className="mt-5 text-xl font-medium text-[#0D3B66]">{feature.name}</h3>
+              <p className="mt-2 text-white">{feature.description}</p>
+>>>>>>> 2cc58a3 (Initial commit)
             </div>
           ))}
         </div>

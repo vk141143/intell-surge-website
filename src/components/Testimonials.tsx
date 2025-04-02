@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 import React, { useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
+=======
+import React, { useEffect, useRef } from 'react';
+>>>>>>> 2cc58a3 (Initial commit)
 import { Card, CardContent } from './ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
@@ -35,7 +39,10 @@ const Testimonials = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+<<<<<<< HEAD
             // Add animation classes when section is visible
+=======
+>>>>>>> 2cc58a3 (Initial commit)
             document.querySelectorAll('.testimonials-title').forEach(el => {
               el.classList.add('animate-text-reveal');
             });
@@ -51,17 +58,29 @@ const Testimonials = () => {
 
     return () => {
       if (sectionRef.current) {
+<<<<<<< HEAD
+=======
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+>>>>>>> 2cc58a3 (Initial commit)
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
   return (
+<<<<<<< HEAD
     <section id="testimonials" className="section-padding" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="heading-lg testimonials-title opacity-0">What Our Clients Say</h2>
           <p className="paragraph mt-4 max-w-3xl mx-auto testimonials-title opacity-0">
+=======
+    <section id="testimonials" className="section-padding bg-white" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="heading-lg testimonials-title opacity-0 text-[#0D3B66]">What Our Clients Say</h2>
+          <p className="paragraph mt-4 max-w-3xl mx-auto testimonials-title opacity-0 text-[#11B5E4]">
+>>>>>>> 2cc58a3 (Initial commit)
             We've helped organizations across industries transform their technology infrastructure and achieve remarkable results.
           </p>
         </div>
@@ -70,6 +89,7 @@ const Testimonials = () => {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+<<<<<<< HEAD
                 <Card className="glass-morphism border-intell-green/20">
                   <CardContent className="p-8">
                     <div className="flex mb-4">
@@ -81,6 +101,19 @@ const Testimonials = () => {
                     <div>
                       <h4 className="font-semibold text-white">{testimonial.author}</h4>
                       <p className="text-sm text-gray-400">{testimonial.position}</p>
+=======
+                <Card className="glass-morphism border-[#11B5E4]/20">
+                  <CardContent className="p-8">
+                    <div className="flex mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-[#dc3545] text-lg"></i>
+                      ))}
+                    </div>
+                    <p className="text-[#0D3B66] italic mb-6">"{testimonial.content}"</p>
+                    <div>
+                      <h4 className="font-semibold text-[#11B5E4]">{testimonial.author}</h4>
+                      <p className="text-sm text-[#dc3545]">{testimonial.position}</p>
+>>>>>>> 2cc58a3 (Initial commit)
                     </div>
                   </CardContent>
                 </Card>
@@ -88,11 +121,37 @@ const Testimonials = () => {
             ))}
           </CarouselContent>
           <div className="hidden md:block">
+<<<<<<< HEAD
             <CarouselPrevious className="border-intell-green/20 text-intell-green hover:bg-intell-green/20 hover:text-intell-lightGreen" />
             <CarouselNext className="border-intell-green/20 text-intell-green hover:bg-intell-green/20 hover:text-intell-lightGreen" />
           </div>
         </Carousel>
       </div>
+=======
+            <CarouselPrevious className="border-[#11B5E4]/20 text-[#11B5E4] hover:bg-[#11B5E4]/20 hover:text-[#0D3B66]" />
+            <CarouselNext className="border-[#11B5E4]/20 text-[#11B5E4] hover:bg-[#11B5E4]/20 hover:text-[#0D3B66]" />
+          </div>
+        </Carousel>
+      </div>
+
+      {/* Floating Icons for WhatsApp and Chat */}
+      <div className="fixed bottom-6 right-6 flex flex-col space-y-4">
+        {/* WhatsApp Icon */}
+        <a
+          href="https://wa.me/918886777107"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all"
+        >
+          <i className="fab fa-whatsapp text-2xl"></i> {/* Corrected WhatsApp icon */}
+        </a>
+
+        {/* Chat Icon */}
+        <button className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all">
+          <i className="fas fa-comment-dots text-2xl"></i>
+        </button>
+      </div>
+>>>>>>> 2cc58a3 (Initial commit)
     </section>
   );
 };

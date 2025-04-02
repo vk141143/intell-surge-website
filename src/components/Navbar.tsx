@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2cc58a3 (Initial commit)
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -30,9 +33,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
+<<<<<<< HEAD
             <a href="#" className="text-intell-green font-bold text-2xl flex items-center">
               <span className="w-8 h-8 mr-2 bg-intell-green rounded-md flex items-center justify-center text-black">IS</span>
               <span className="text-white">IntellSurge</span>
+=======
+            <a href="#" className="flex items-center">
+              <img src="https://www.intellisurgetechnologies.com/images/logo-final.svg" alt="IntellSurge Logo" className="h-10 w-auto mr-2" />
+>>>>>>> 2cc58a3 (Initial commit)
             </a>
           </div>
           
