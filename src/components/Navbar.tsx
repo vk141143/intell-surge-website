@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 2cc58a3 (Initial commit)
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,14 +31,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-<<<<<<< HEAD
-            <a href="#" className="text-intell-green font-bold text-2xl flex items-center">
-              <span className="w-8 h-8 mr-2 bg-intell-green rounded-md flex items-center justify-center text-black">IS</span>
-              <span className="text-white">IntellSurge</span>
-=======
             <a href="#" className="flex items-center">
               <img src="https://www.intellisurgetechnologies.com/images/logo-final.svg" alt="IntellSurge Logo" className="h-10 w-auto mr-2" />
->>>>>>> 2cc58a3 (Initial commit)
             </a>
           </div>
           
@@ -52,9 +44,9 @@ const Navbar = () => {
             <a href="#about" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
               About Us
             </a>
-            <a href="#team" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
-              Our Team
-            </a>
+            <Link to="/careers" className="text-gray-400 hover:text-intell-green font-medium transition-colors duration-200">
+              Careers
+            </Link>
             <a href="#contact" className="btn-primary">
               Get Started
             </a>
@@ -82,9 +74,9 @@ const Navbar = () => {
             <a href="#about" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
               About Us
             </a>
-            <a href="#team" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
-              Our Team
-            </a>
+            <Link to="/careers" className="block px-3 py-2 text-gray-400 hover:text-intell-green font-medium">
+              Careers
+            </Link>
             <a href="#contact" className="block px-3 py-2 btn-primary text-center mt-4">
               Get Started
             </a>
